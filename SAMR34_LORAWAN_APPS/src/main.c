@@ -84,11 +84,11 @@ uint8_t AppTimerID = 0xFF ;
 bool joined = false ;
 LorawanSendReq_t lorawanSendReq ;
 #define APP_BUF_SIZE	5
-//								IO1-L  IO1-Temperature sensor
+//								IO1-L  IO1-Temperature sensor in °C
 uint8_t app_buf[APP_BUF_SIZE] = {0x00, 0x32, 0x35, 0x2E, 0x30} ;
 
 // OTAA join parameters
-uint8_t demoDevEui[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00} ;	// Read from EDBG chip
+uint8_t demoDevEui[8] = {0x00, 0x04, 0x25, 0x19, 0x18, 0x01, 0xD6, 0x7F} ;	// Put your own DevEui
 uint8_t demoAppEui[8] = { 0x70, 0xB3, 0xD5, 0x7E, 0xD0, 0x01, 0x63, 0xE5 } ;// Put your own AppEui
 uint8_t demoAppKey[16] = { 0x4C, 0xC8, 0x90, 0x59, 0x02, 0x08, 0x69, 0x82, 0xD3, 0x4C, 0xB4, 0x13, 0x96, 0xD4, 0xE0, 0x3E } ; // Put your own AppKey
 
@@ -462,16 +462,15 @@ int main(void)
 	// IO1 Xpro Light sensor
 	configure_adc() ;
 	// IO1 Xpro Temperature sensor
-	at30tse_init() ;	
+	at30tse_init() ;
 	set_LED_data(LED_GREEN, &off) ;
 	set_LED_data(LED_AMBER, &off) ;
 	printf("\r\n-- ATSAMR34 LoRaWAN Application --\r\n") ;
-	
+
 	// --------------------------------------------------------------------------
 	// OTA Activation keys section
 	// --------------------------------------------------------------------------
 	// Device EUI is the unique identifier for this device on the network
-	// Read DevEUI from EDBG
 	dev_eui_read() ;
 	printf("\nDevEUI : ") ;
 	print_array(demoDevEui, sizeof(demoDevEui)) ;
@@ -482,8 +481,8 @@ int main(void)
 	// AppKey is defined in the global variable demoAppKey
 	printf("\nAppKey : ") ;
 	print_array(demoAppKey, sizeof(demoAppKey)) ;	
-	
-	LORAWAN_Init(appdata_callback, NULL) ;	
+
+	LORAWAN_Init(appdata_callback, joindata_callback) ;	
 	LORAWAN_Reset(ISM_EU868) ;
 	EdClass_t classType = CLASS_A ;
 	LORAWAN_SetAttr(EDCLASS, &classType) ;

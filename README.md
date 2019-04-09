@@ -1,12 +1,13 @@
 # ATSAMR34_LORAWAN_I2C_SENSOR
-> Adding Sensors to ATSAMR34 Xplained Pro board
+> Adding IO1-XPRO sensors to ATSAMR34 Xplained Pro board
 
-This sample code read light and temperature sensors from the ATIO1-XPRO and send uplink packet to the LoRaWAN(tm) network.
+This sample code read light and temperature sensors from the ATIO1-XPRO and transmit data to the LoRaWAN(tm) network.
 
 For more information on Microchip ATSAMR34 LoRa SiP and ATIO1-XPRO, visit Microchip webpages: </br>
 https://www.microchip.com/design-centers/wireless-connectivity/low-power-wide-area-networks/lora-technology/sam-r34-r35
 https://www.microchip.com/developmenttools/ProductDetails/ATIO1-XPRO
 
+![](Doc/SETUP.png)
 
 ## Get a Microchip ATSAMR34 Xplained Pro evaluation kit
 
@@ -50,6 +51,12 @@ Until the next Atmel Studio IDE release, you have to manually install the Device
 - Search for SAMR34 and click install </br>
 - Repeat the same for SAMR35 </br>
 - Restart Atmel Studio 7.0 IDE </br>
+
+## Hardware Setup
+
+Follow the instructions below to connect SAMR34-Xpro and IO1-Xpro boards together.
+
+![](Doc/Interface.png)
 
 ## Tutorial
 

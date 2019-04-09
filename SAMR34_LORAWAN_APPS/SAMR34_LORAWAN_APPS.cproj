@@ -344,7 +344,7 @@
       </framework-data>
     </AsfFrameworkConfig>
     <avrtool>com.atmel.avrdbg.tool.edbg</avrtool>
-    <avrtoolserialnumber>ATML3167041800000706</avrtoolserialnumber>
+    <avrtoolserialnumber>ATML3167041800000565</avrtoolserialnumber>
     <avrdeviceexpectedsignature>0x10810228</avrdeviceexpectedsignature>
     <avrtoolinterface>SWD</avrtoolinterface>
     <com_atmel_avrdbg_tool_edbg>
@@ -355,7 +355,7 @@
         <InterfaceName>SWD</InterfaceName>
       </ToolOptions>
       <ToolType>com.atmel.avrdbg.tool.edbg</ToolType>
-      <ToolNumber>ATML3167041800000706</ToolNumber>
+      <ToolNumber>ATML3167041800000565</ToolNumber>
       <ToolName>EDBG</ToolName>
     </com_atmel_avrdbg_tool_edbg>
     <avrtoolinterfaceclock>2000000</avrtoolinterfaceclock>
@@ -636,7 +636,7 @@
       <Value>I2C_MASTER_CALLBACK_MODE=true</Value>
       <Value>SPI_CALLBACK_MODE=false</Value>
       <Value>KR_BAND=1</Value>
-      <Value>EDBG_EUI_READ=1</Value>
+      <Value>EDBG_EUI_READ=0</Value>
       <Value>ARM_MATH_CM0PLUS=true</Value>
       <Value>BOARD=SAMR34_XPLAINED_PRO</Value>
       <Value>EXTINT_CALLBACK_MODE=true</Value>
